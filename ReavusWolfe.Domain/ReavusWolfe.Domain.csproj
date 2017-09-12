@@ -56,6 +56,21 @@
       <DependentUpon>EntityContext.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityModel.cs" />
+    <Compile Include="Migrations\201709121036097_Initial.cs" />
+    <Compile Include="Migrations\201709121036097_Initial.Designer.cs">
+      <DependentUpon>201709121036097_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709121153023_Addingtables.cs" />
+    <Compile Include="Migrations\201709121153023_Addingtables.Designer.cs">
+      <DependentUpon>201709121153023_Addingtables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\People.cs" />
+    <Compile Include="Model\Work.cs" />
+    <Compile Include="Model\Holdays.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Income.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,7 +78,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\EntityContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -72,6 +86,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709121036097_Initial.resx">
+      <DependentUpon>201709121036097_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709121153023_Addingtables.resx">
+      <DependentUpon>201709121153023_Addingtables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

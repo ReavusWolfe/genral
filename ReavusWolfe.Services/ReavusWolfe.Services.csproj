@@ -88,7 +88,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TotalRen.Domain\TotalRen.Domain.csproj">
+    <ProjectReference Include="..\ReavusWolfe.Domain\ReavusWolfe.Domain.csproj">
       <Project>{21366a24-f8a8-4d3c-ac95-2772135b0c43}</Project>
       <Name>ReavusWolfe.Domain</Name>
     </ProjectReference>

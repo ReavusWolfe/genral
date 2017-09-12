@@ -1,14 +1,5 @@
 ﻿
 
-
-
-
-
-
-
-
-
-
 // ReSharper disable RedundantNameQualifier
 // ReSharper disable UnusedMember.Global
 // ReSharper disable InconsistentNaming
@@ -31,9 +22,8 @@ namespace ReavusWolfe.Domain.DAL
     public interface IEntityContext : IDisposable
     {
 		 
-				DbSet<ReavusWolfe.Domain.FooEntity> FooEntities { get; set; }
-			
-		bool IsCompatibleWithModel(bool throwIfNoMetadata);             
+				DbSet<ReavusWolfe.Domain.Model.Money> Money { get; set; }
+					bool IsCompatibleWithModel(bool throwIfNoMetadata);             
         void DisableProxyCreation();
         void DisableLazyLoading();
         int SaveChanges();
@@ -50,10 +40,8 @@ namespace ReavusWolfe.Domain.DAL
 		_db = db;
 			DisableLazyLoading();
 		}
-
-			public DbSet<ReavusWolfe.Domain.FooEntity> FooEntities { get { return _db.FooEntities;}  set { throw new InvalidOperationException();} }
-			
-public void ExecuteSql(string sql){
+			public DbSet<ReavusWolfe.Domain.Model.Money> Money { get { return _db.Money;}  set { throw new InvalidOperationException();} }
+			public void ExecuteSql(string sql){
 _db.Database.ExecuteSqlCommand(sql);
 }
 public string GetConnectionString(){
@@ -94,10 +82,8 @@ return _db.Database.Connection.ConnectionString;
 	public class FakeEntityContext : IEntityContext
 	{
 		private static HashSet<object> _entities = new HashSet<object>();
-
-				public DbSet<ReavusWolfe.Domain.FooEntity> FooEntities { get; set; } = new TestDbSet<ReavusWolfe.Domain.FooEntity>();
-			
-		public bool IsCompatibleWithModel(bool throwIfNoMetadata)
+				public DbSet<ReavusWolfe.Domain.Model.Money> Money { get; set; } = new TestDbSet<ReavusWolfe.Domain.Model.Money>();
+					public bool IsCompatibleWithModel(bool throwIfNoMetadata)
         {
             return true;
         }
